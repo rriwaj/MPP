@@ -1,0 +1,2 @@
+The "public boolean equals(Employee e)" method in Employee class does not override the object class equals method, 
+which will cause a conflict when contains method in listsAreEqual is called.

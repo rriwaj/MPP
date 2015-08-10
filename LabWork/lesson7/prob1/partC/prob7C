@@ -1,0 +1,2 @@
+The Hashset in EmployeeInfo checks for equals and hashCode methods in Employee class, but the hashCode method is missing,
+causing the list to add all the elements again to the Hashset.

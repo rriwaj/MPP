@@ -1,0 +1,2 @@
+The dupsRemoved list has its data's visited instance variable set as false, so when checking the dupsRemoved list equality with the resulted list,
+it will return false, as the equals method in employee checks the visited instance variable.

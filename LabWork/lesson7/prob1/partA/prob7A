@@ -1,0 +1,5 @@
+ArrayList implements:
+Serializable, Cloneable, Iterable, Collection, List, RandomAccess
+
+and extends:
+AbstractList
