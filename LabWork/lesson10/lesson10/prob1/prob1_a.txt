@@ -1,0 +1,4 @@
+1.a. Error occurs in line List<Number> nums = ints; 
+     Though Integer is sub-type of Number List<Integer> is not sub type of ArrayList<Integer
+     compile error occurs for the reason of type safety. 
+								

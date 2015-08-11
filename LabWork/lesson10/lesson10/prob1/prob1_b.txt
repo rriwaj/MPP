@@ -1,0 +1,4 @@
+1.b. Error occurrs in line nums1.add(ints1); 
+     we cannot add any objects to ? extends Number because we don't know
+     what kind of object is it pointing to either Integer, double or Number
+     we can only read from ? extends. 

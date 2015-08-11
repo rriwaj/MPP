@@ -1,0 +1,83 @@
+Lab 8
+--------------------------------------------------
+1. Short answer
+
+a. Functional vs Imperative programming.
+
+1)In functional programming funtions are considered as first class citizen but in imperative programming functions are not considered as first class citizen. This means we can pass functions as value in functional programming but it is not possible in imperative programming.
+
+2) In imperative programming we write code that describes the steps computer must take to solve a problem. But, functional programming involves solving the problem by dividing it into small set of functions to be executed. We define each funtion carefully deciding what parameter it takes and what it returns. 
+
+------------------------------------------------------
+b. Declarative programming
+Declarative programming is a non-imperative style of programming in which program describe their desired results without listing commands or steps to be performed. In declarative programming state change occurs only through function which are considered as first-class citizen.We solve problem by making many mathematical functions in declarative programming.In declarative programming we write what we want to be done instead of how we want it to be done.
+Eg of declarative programming is functional programming.
+
+-------------------------------------------------------
+c. Difference between functional interface, functor, and closure
+
+Functional Interface:
+Functional Interface have only one abstract method in it. All interface that satisfy this definition can be implemented through lambda in Java 8. 
+Example:
+interface Comparator<T> {
+	int compare(T o1, T o2);
+}
+
+Functor:
+Class that implements functional interface is called functor.
+
+Example:
+public class StudentGradeComparator implements Comparator<Student>{
+@Override 
+public int compare(Student s, Student s1){
+	return s.grade.compareTo(s.grade);
+}
+}
+
+Closure:
+In java 7 inner class provides closure features. It is implementation of functional interface(functor) which is enclosed inside another class.
+Closure is a block of code that can be referenced with access to the variables of the enclosing scope(Inner class can access variables of enclosing class i.e. outer class). In java 8 anonymous function or closure is provided through lambda expression.
+Example:
+Class OuterClass{
+int a=10;
+public void myMethod(){
+	class MyInner{
+		public void myInnerMethod(){
+		System.out.println("My value is+",10);
+		}
+	}
+}
+
+-------------------------------------------------------------
+d. Benifits of including functional style programming in Java
+
+1) We can solve problems by only declaring methods about what we need rather than specifying the details of how to solve a problem by providing series of instructions.
+2) Programs is more thread safe in functional programming than in imperative programming.
+3) Functional programming supports parallelism. 
+
+----------------------------------------------------
+e.i. no parameter s and t are free variables
+e.ii. s,t parameter ignoreCase free variable
+
+----------------------------------------------------
+f. x->this.equals(x) 
+   Object::instanceMethod 
+   
+-----------------------------------------------------
+g.i. Consumer<String> c1 = System.out::println;
+   // calling the method
+   c1.accept("Hello Lambda expression");
+
+g.ii. this is object instance method reference as println is method of PrintStream class which is accessed through instance of out which is static variable of type PrintStream; --> not sure
+
+---------------------------------------------------
+j. Supplier<Double> d = Math::random;
+   d.get();
+
+---------------------------------------------------
+2. Comparators.
+A.If two Employee objects have same name return value of compare method is 0. This is always not true. If two Employee have same name but do not have same salary they cannot be considered equal.
+Eg: Employee e1= new Employee("Riwaj",100000);
+    Employee e2 = new Employee("Riwaj", 200000);
+    Here e1 and e2 should not be equal though they have same name as salary is different. But, the compare method returns both object as equal.
+
